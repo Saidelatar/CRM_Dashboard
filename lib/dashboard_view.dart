@@ -1,4 +1,5 @@
 import 'package:crm_dahboard/adaptive_layout.dart';
+import 'package:crm_dahboard/dashboard_desktop_layout.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatelessWidget {
@@ -10,6 +11,6 @@ class DashboardView extends StatelessWidget {
         body: AdaptiveLayout(
             mobileLayout: (context) => const Scaffold(),
             tabletLayout: (context) => const Scaffold(),
-            desktopLayout: (context) => const Scaffold()));
+            desktopLayout: (context) => const DashboardDesktopLayout()));
   }
 }
