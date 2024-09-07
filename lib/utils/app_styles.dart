@@ -12,19 +12,18 @@ abstract class AppStyles {
 
   static TextStyle styleRegular20(context) {
     return const TextStyle(
-      color: Color(0xFFFFFFFF),
-      fontSize: 20,
-      fontFamily: 'Inter',
-      fontWeight: FontWeight.w400,
-    );
+        color: Color(0xFFFFFFFF),
+        fontSize: 20,
+        fontFamily: 'Inter',
+        fontWeight: FontWeight.normal);
   }
 
   static TextStyle styleBold24(context) {
     return const TextStyle(
       color: Color(0xff9C5D9C),
-      fontSize: 24,
+      fontWeight: FontWeight.bold,
       fontFamily: 'Inter',
-      fontWeight: FontWeight.w700,
+      fontSize: 24,
     );
   }
 
