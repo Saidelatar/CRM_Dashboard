@@ -2,7 +2,6 @@ import 'package:crm_dahboard/custom_button.dart';
 import 'package:crm_dahboard/drawer_listtile.dart';
 import 'package:crm_dahboard/items_listview.dart';
 import 'package:crm_dahboard/models/items_model.dart';
-import 'package:crm_dahboard/models/sizeconfig.dart';
 import 'package:crm_dahboard/models/value_notifier.dart';
 import 'package:crm_dahboard/utils/app_images.dart';
 import 'package:crm_dahboard/utils/app_styles.dart';
@@ -19,7 +18,7 @@ class CustomDrawer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: const BoxDecoration(color: Color(0xff161B2E)),
-      width: Sizeconfig.width * 0.2,
+      width: MediaQuery.sizeOf(context).width * 0.2,
       child: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(
