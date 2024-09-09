@@ -2,12 +2,16 @@ import 'package:crm_dahboard/custom_button.dart';
 import 'package:crm_dahboard/drawer_listtile.dart';
 import 'package:crm_dahboard/items_listview.dart';
 import 'package:crm_dahboard/models/items_model.dart';
+import 'package:crm_dahboard/models/value_notifier.dart';
 import 'package:crm_dahboard/utils/app_images.dart';
 import 'package:crm_dahboard/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+  final ActiveIndexController controller = ActiveIndexController();
+  CustomDrawer({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +46,8 @@ class CustomDrawer extends StatelessWidget {
               ItemsModel(item: 'Graph'),
               ItemsModel(item: 'Text'),
             ],
+            listIndex: 0,
+            controller: controller,
           ),
           const SliverToBoxAdapter(
             child: Divider(
@@ -59,6 +65,8 @@ class CustomDrawer extends StatelessWidget {
               ItemsModel(item: 'Online Chat'),
               ItemsModel(item: 'Website'),
             ],
+            listIndex: 1,
+            controller: controller,
           ),
           const SliverToBoxAdapter(
             child: Divider(
@@ -78,6 +86,8 @@ class CustomDrawer extends StatelessWidget {
               ItemsModel(item: 'Other'),
               ItemsModel(item: 'Deleted'),
             ],
+            listIndex: 2,
+            controller: controller,
           ),
           const SliverToBoxAdapter(
             child: Divider(

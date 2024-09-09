@@ -1,24 +1,58 @@
-import 'package:crm_dahboard/active_inactive_drawer_item.dart';
+import 'package:crm_dahboard/drawer_item.dart';
 import 'package:crm_dahboard/models/items_model.dart';
+import 'package:crm_dahboard/models/value_notifier.dart';
 import 'package:flutter/material.dart';
 
-class DrawerItemsListview extends StatelessWidget {
+class DrawerItemsListview extends StatefulWidget {
   List<ItemsModel> items = [const ItemsModel(item: '')];
-  DrawerItemsListview({super.key, required this.items});
+  final int listIndex;
+  final ActiveIndexController controller;
+  DrawerItemsListview(
+      {super.key,
+      required this.items,
+      required this.listIndex,
+      required this.controller});
 
-  /*List<ItemsModel> items = [
-    const ItemsModel(item: 'Email'),
-    const ItemsModel(item: 'Phone Call'),
-    const ItemsModel(item: 'Online Chat'),
-    const ItemsModel(item: 'Website'),
-  ];*/
+  @override
+  State<DrawerItemsListview> createState() => _DrawerItemsListviewState();
+}
+
+class _DrawerItemsListviewState extends State<DrawerItemsListview> {
+  int activeindex = -1;
+
+  @override
+  void initState() {
+    // Listen for changes in the active list or active item
+    widget.controller.activeListIndex.addListener(() {
+      if (widget.controller.activeListIndex.value != widget.listIndex) {
+        setState(() {
+          activeindex =
+              -1; // Reset activeindex when this is not the active list
+        });
+      }
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SliverList.builder(
-        itemCount: items.length,
+        itemCount: widget.items.length,
         itemBuilder: (context, index) {
-          return ActiveDrawerItem(itemsModel: items[index]);
+          return GestureDetector(
+              onTap: () {
+                if (activeindex != index) {
+                  setState(() {
+                    activeindex = index;
+                    widget.controller.activeListIndex.value =
+                        widget.listIndex; // Update active list index
+                    widget.controller.activeItemIndex.value = index;
+                  });
+                }
+              },
+              child: DrawerItem(
+                  isActive: activeindex == index,
+                  itemsModel: widget.items[index]));
         });
   }
 }

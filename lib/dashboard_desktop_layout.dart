@@ -6,12 +6,12 @@ class DashboardDesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xff121526),
+    return Scaffold(
+      backgroundColor: const Color(0xff121526),
       body: Row(
         children: [
-          Expanded(child: CustomDrawer()),
-          SizedBox(
+          CustomDrawer(),
+          const SizedBox(
             width: 55,
           ),
         ],

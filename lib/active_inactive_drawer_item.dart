@@ -25,7 +25,13 @@ class ActiveDrawerItem extends StatelessWidget {
       color: const Color(0xff423064),
       child: Row(
         children: [
-          const Icon(Icons.shape_line),
+          Transform.rotate(
+              angle: 1.57,
+              child: const Icon(
+                Icons.eject,
+                color: Color(0xffC25DEB),
+                size: 40,
+              )),
           Text(
             itemsModel.item,
             style: AppStyles.styleRegular20(context),
