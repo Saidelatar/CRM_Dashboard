@@ -8,10 +8,24 @@ class DrawerListtile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return Row(
+      children: [
+        SvgPicture.asset(image),
+        const SizedBox(
+          width: 8,
+        ),
+        Text(
+          text,
+          style: AppStyles.styleBold24(context),
+        ),
+      ],
+    );
+
+    ListTile(
       contentPadding: const EdgeInsets.all(0),
       leading: SvgPicture.asset(image),
-      title: FittedBox(
+      trailing: FittedBox(
+        fit: BoxFit.scaleDown,
         child: Text(
           text,
           style: AppStyles.styleBold24(context),

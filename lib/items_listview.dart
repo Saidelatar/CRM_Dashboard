@@ -1,4 +1,4 @@
-import 'package:crm_dahboard/drawer_item.dart';
+import 'package:crm_dahboard/active_inactive_drawer_item.dart';
 import 'package:crm_dahboard/models/items_model.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class DrawerItemsListview extends StatelessWidget {
     return SliverList.builder(
         itemCount: items.length,
         itemBuilder: (context, index) {
-          return DrawerItem(itemsModel: items[index]);
+          return ActiveDrawerItem(itemsModel: items[index]);
         });
   }
 }
