@@ -1,7 +1,14 @@
 import 'package:crm_dahboard/custom_container.dart';
 import 'package:crm_dahboard/line_chart_container.dart';
+import 'package:crm_dahboard/models/tickets_by_type_details_model.dart';
+import 'package:crm_dahboard/now_returned_tickets_container.dart';
+import 'package:crm_dahboard/now_returned_tickets_items_details.dart';
 import 'package:crm_dahboard/small_container.dart';
+import 'package:crm_dahboard/tickets_by_chart_container.dart';
 import 'package:crm_dahboard/utils/app_images.dart';
+import 'package:crm_dahboard/utils/app_styles.dart';
+import 'package:fl_chart/fl_chart.dart';
+
 import 'package:flutter/material.dart';
 
 class MiddleSection extends StatelessWidget {
@@ -61,12 +68,19 @@ class MiddleSection extends StatelessWidget {
         SizedBox(
           height: 31,
         ),
-        Expanded(
-            child: AspectRatio(
-                aspectRatio: 707 / 232, child: LineChartContainer())),
+        Expanded(child: LineChartContainer()),
         SizedBox(
           height: 14,
-        )
+        ),
+        Row(
+          children: [
+            Expanded(child: TicketsByTypeContainer()),
+            SizedBox(
+              width: 30,
+            ),
+            Expanded(child: NowAndReturnedTicketsContainer())
+          ],
+        ),
       ],
     );
   }
