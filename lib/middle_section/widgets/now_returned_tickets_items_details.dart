@@ -9,7 +9,32 @@ class NowAndReturnedTicketsItemsDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return Row(
+      children: [
+        Container(
+          width: 12,
+          height: 12,
+          decoration: ShapeDecoration(
+            color: itemModel.color,
+            shape: const OvalBorder(),
+          ),
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        Flexible(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModel.title,
+              style: AppStyles.styleMeduim16(context),
+            ),
+          ),
+        ),
+      ],
+    );
+
+    ListTile(
       leading: Container(
         width: 12,
         height: 12,
@@ -18,7 +43,7 @@ class NowAndReturnedTicketsItemsDetails extends StatelessWidget {
           shape: const OvalBorder(),
         ),
       ),
-      title: FittedBox(
+      title: Expanded(
         child: Text(
           itemModel.title,
           style: AppStyles.styleMeduim16(context),

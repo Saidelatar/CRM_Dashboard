@@ -10,14 +10,12 @@ class NowAndReturnedTicketsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 299,
-      width: 335,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: const Color(0xff161C32),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -30,12 +28,12 @@ class NowAndReturnedTicketsContainer extends StatelessWidget {
               height: 30,
             ),
             const Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Expanded(child: NowAndReturnedTicketsChart()),
                 SizedBox(
-                  width: 33,
+                  width: 20,
                 ),
                 Expanded(child: NowAndReturnedTicketsDetails()),
               ],

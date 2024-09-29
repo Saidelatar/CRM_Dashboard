@@ -16,7 +16,10 @@ class NowAndReturnedTicketsDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: items
-          .map((e) => NowAndReturnedTicketsItemsDetails(itemModel: e))
+          .map((e) => Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: NowAndReturnedTicketsItemsDetails(itemModel: e),
+              ))
           .toList(),
     );
   }

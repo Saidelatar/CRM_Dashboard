@@ -9,8 +9,6 @@ class TicketsByTypeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 299,
-      width: 335,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: const Color(0xff161C32),

@@ -1,8 +1,6 @@
 import 'package:crm_dahboard/custom_drawer/custom_drawer.dart';
-import 'package:crm_dahboard/last_section/widgets/first_reply_line_chart.dart';
 import 'package:crm_dahboard/last_section/last_section.dart';
 import 'package:crm_dahboard/middle_section/middle_section.dart';
-import 'package:crm_dahboard/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
