@@ -1,7 +1,7 @@
 import 'package:crm_dahboard/models/tickets_by_type_details_model.dart';
 import 'package:flutter/material.dart';
 
-import 'utils/app_styles.dart';
+import '../../utils/app_styles.dart';
 
 class NowAndReturnedTicketsItemsDetails extends StatelessWidget {
   final TicketsByTypeDetailsModel itemModel;
@@ -18,9 +18,11 @@ class NowAndReturnedTicketsItemsDetails extends StatelessWidget {
           shape: const OvalBorder(),
         ),
       ),
-      title: Text(
-        itemModel.title,
-        style: AppStyles.styleMeduim16(context),
+      title: FittedBox(
+        child: Text(
+          itemModel.title,
+          style: AppStyles.styleMeduim16(context),
+        ),
       ),
     );
   }

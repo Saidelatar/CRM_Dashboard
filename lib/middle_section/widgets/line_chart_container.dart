@@ -9,6 +9,7 @@ class LineChartContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 233,
       decoration: BoxDecoration(
           color: const Color(0xff161C32),
           borderRadius: BorderRadius.circular(12)),
@@ -22,7 +23,6 @@ class LineChartContainer extends StatelessWidget {
             child: Row(
               children: [
                 FittedBox(
-                  fit: BoxFit.scaleDown,
                   child: Text(
                     'Tickets Created vs Tickets Solved',
                     style: AppStyles.styleSemiBold16(context).copyWith(
@@ -35,7 +35,6 @@ class LineChartContainer extends StatelessWidget {
                 ),
                 Flexible(
                   child: FittedBox(
-                    fit: BoxFit.scaleDown,
                     child: Text(
                       'Tickets Solved ',
                       style: AppStyles.styleSemiBold16(context).copyWith(
@@ -45,10 +44,14 @@ class LineChartContainer extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  height: 2,
-                  width: 80,
-                  color: const Color(0xff27B6E0),
+                Flexible(
+                  child: FittedBox(
+                    child: Container(
+                      height: 2,
+                      width: 80,
+                      color: const Color(0xff27B6E0),
+                    ),
+                  ),
                 ),
                 Flexible(
                   child: FittedBox(

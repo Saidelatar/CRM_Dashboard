@@ -18,7 +18,7 @@ class _MyWidgetState extends State<TicketsByTypeChart> {
 
   PieChartData getChartData() {
     return PieChartData(
-      sectionsSpace: 0,
+      sectionsSpace: 2,
       pieTouchData: PieTouchData(
         enabled: true,
         touchCallback: (p0, pietouchResponse) {
@@ -31,23 +31,27 @@ class _MyWidgetState extends State<TicketsByTypeChart> {
       sections: [
         PieChartSectionData(
           showTitle: false,
+          value: 40,
           color: const Color(0xFF34D196),
-          radius: activeIndex == 0 ? 60 : 50,
+          radius: activeIndex == 0 ? 35 : 25,
         ),
         PieChartSectionData(
           showTitle: false,
+          value: 40,
           color: const Color(0xFFFFA15B),
-          radius: activeIndex == 1 ? 60 : 50,
+          radius: activeIndex == 1 ? 35 : 25,
         ),
         PieChartSectionData(
           showTitle: false,
+          value: 70,
           color: const Color(0xFF6665DD),
-          radius: activeIndex == 2 ? 60 : 50,
+          radius: activeIndex == 2 ? 35 : 25,
         ),
         PieChartSectionData(
+          value: 20,
           showTitle: false,
           color: const Color(0xFF166E9C),
-          radius: activeIndex == 3 ? 60 : 50,
+          radius: activeIndex == 3 ? 35 : 25,
         ),
       ],
     );

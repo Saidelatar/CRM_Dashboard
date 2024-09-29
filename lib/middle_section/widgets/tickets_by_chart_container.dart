@@ -1,5 +1,5 @@
 import 'package:crm_dahboard/models/tickets_by_type_details_model.dart';
-import 'package:crm_dahboard/tickets_by_type_chart.dart';
+import 'package:crm_dahboard/middle_section/widgets/tickets_by_type_chart.dart';
 import 'package:crm_dahboard/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +9,8 @@ class TicketsByTypeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 299,
+      width: 335,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: const Color(0xff161C32),
@@ -59,8 +61,6 @@ class TicketsByTypeDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: items.map((e) => TicketsItemsDetails(itemModel: e)).toList(),
     );
   }
@@ -82,9 +82,12 @@ class TicketsItemsDetails extends StatelessWidget {
           shape: const OvalBorder(),
         ),
       ),
-      title: Text(
-        itemModel.title,
-        style: AppStyles.styleMeduim16(context),
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          itemModel.title,
+          style: AppStyles.styleMeduim16(context),
+        ),
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:crm_dahboard/utils/app_styles.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +51,7 @@ class _MyWidgetState extends State<NowAndReturnedTicketsChart> {
           ]),
           showTitle: false,
           color: const Color(0xFFB200FF),
-          radius: activeIndex == 1 ? 60 : 10,
+          radius: activeIndex == 1 ? 60 : 15,
         ),
       ],
     );

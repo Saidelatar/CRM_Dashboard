@@ -14,11 +14,13 @@ class DrawerListtile extends StatelessWidget {
         const SizedBox(
           width: 8,
         ),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            text,
-            style: AppStyles.styleBold24(context),
+        Flexible(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text,
+              style: AppStyles.styleBold24(context),
+            ),
           ),
         ),
       ],

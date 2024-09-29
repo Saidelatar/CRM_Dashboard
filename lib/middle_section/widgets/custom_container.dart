@@ -14,6 +14,8 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 230,
+      height: 140,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           gradient: LinearGradient(colors: [color1, color2])),
@@ -23,17 +25,21 @@ class CustomContainer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              text1,
-              style: AppStyles.styleMeduim13(context),
+            FittedBox(
+              child: Text(
+                text1,
+                style: AppStyles.styleMeduim13(context),
+              ),
             ),
             const SizedBox(
               height: 10,
             ),
-            Text(
-              text2,
-              style:
-                  AppStyles.styleBold24(context).copyWith(color: Colors.white),
+            FittedBox(
+              child: Text(
+                text2,
+                style: AppStyles.styleBold24(context)
+                    .copyWith(color: Colors.white),
+              ),
             )
           ],
         ),

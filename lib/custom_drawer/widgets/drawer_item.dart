@@ -1,4 +1,4 @@
-import 'package:crm_dahboard/active_inactive_drawer_item.dart';
+import 'package:crm_dahboard/custom_drawer/widgets/active_inactive_drawer_item.dart';
 import 'package:crm_dahboard/models/items_model.dart';
 import 'package:flutter/material.dart';
 

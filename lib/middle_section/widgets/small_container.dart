@@ -15,6 +15,8 @@ class SmallContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        height: 52,
+        width: 292,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: const Color(0xff161C32),
@@ -37,21 +39,26 @@ class SmallContainer extends StatelessWidget {
               const SizedBox(
                 width: 8,
               ),
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  text,
-                  style: AppStyles.styleRegular20(context),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    text,
+                    style: AppStyles.styleRegular20(context),
+                  ),
                 ),
               ),
               const Expanded(child: SizedBox()),
               CircleAvatar(
+                radius: 20,
                 backgroundColor: color,
-                child: Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Text(
-                    text1,
-                    style: AppStyles.styleRegular16(context),
+                child: Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      text1,
+                      style: AppStyles.styleRegular16(context),
+                    ),
                   ),
                 ),
               ),
