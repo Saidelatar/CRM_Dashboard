@@ -11,99 +11,85 @@ class MiddleSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
+    return const Column(
+      children: [
+        SizedBox(
+          height: 55,
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              child: CustomContainer(
+                color1: Color(0xffD172F2),
+                color2: Color(0xff683F8D),
+                text1: 'Avg First Reply Time',
+                text2: '30 h  15 min',
+              ),
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            Expanded(
+              child: CustomContainer(
+                color1: Color(0xff25E2E4),
+                color2: Color(0xff1D5B78),
+                text1: 'Avg Full Resolve  Time',
+                text2: '22 h  40 min',
+              ),
+            ),
+            SizedBox(
+              width: 34,
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  SmallContainer(
+                    image: Assets.imagesIcOutlineMessage,
+                    text: 'Message',
+                    text1: '20%',
+                    color: Color(0xff58384F),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SmallContainer(
+                    image: Assets.imagesEmailcircle,
+                    text: 'Emails',
+                    text1: '22%',
+                    color: Color(0xff105864),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        Flexible(
           child: SizedBox(
-            height: 55,
+            height: 31,
           ),
         ),
-        SliverToBoxAdapter(
+        Flexible(child: LineChartContainer()),
+        Flexible(
+          child: SizedBox(
+            height: 14,
+          ),
+        ),
+        Expanded(
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Expanded(
-                child: CustomContainer(
-                  color1: Color(0xffD172F2),
-                  color2: Color(0xff683F8D),
-                  text1: 'Avg First Reply Time',
-                  text2: '30 h  15 min',
-                ),
-              ),
+              Expanded(child: TicketsByTypeContainer()),
               SizedBox(
-                width: 15,
+                width: 30,
               ),
-              Expanded(
-                child: CustomContainer(
-                  color1: Color(0xff25E2E4),
-                  color2: Color(0xff1D5B78),
-                  text1: 'Avg Full Resolve  Time',
-                  text2: '22 h  40 min',
-                ),
-              ),
-              SizedBox(
-                width: 34,
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    SmallContainer(
-                      image: Assets.imagesIcOutlineMessage,
-                      text: 'Message',
-                      text1: '20%',
-                      color: Color(0xff58384F),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    SmallContainer(
-                      image: Assets.imagesEmailcircle,
-                      text: 'Emails',
-                      text1: '22%',
-                      color: Color(0xff105864),
-                    ),
-                  ],
-                ),
-              ),
+              Expanded(child: NowAndReturnedTicketsContainer()),
             ],
           ),
         ),
-        SliverToBoxAdapter(
-          child: Flexible(
-            child: SizedBox(
-              height: 31,
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Flexible(child: LineChartContainer()),
-        ),
-        SliverToBoxAdapter(
-          child: Flexible(
-            child: SizedBox(
-              height: 14,
-            ),
-          ),
-        ),
-        SliverFillRemaining(
-          hasScrollBody: false,
-          child: Expanded(
-            child: Row(
-              children: [
-                Expanded(child: TicketsByTypeContainer()),
-                SizedBox(
-                  width: 30,
-                ),
-                Expanded(child: NowAndReturnedTicketsContainer()),
-              ],
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-            child: SizedBox(
+        SizedBox(
           height: 32,
-        )),
+        ),
       ],
     );
   }

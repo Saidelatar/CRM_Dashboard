@@ -18,12 +18,21 @@ class DashboardDesktopLayout extends StatelessWidget {
           ),
           const Expanded(
             flex: 3,
-            child: MiddleSection(),
+            child: CustomScrollView(slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Row(
+                  children: [
+                    Expanded(flex: 2, child: MiddleSection()),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(child: LastSection())
+                  ],
+                ),
+              )
+            ]),
           ),
-          const SizedBox(
-            width: 20,
-          ),
-          const Expanded(child: LastSection())
         ],
       ),
     );

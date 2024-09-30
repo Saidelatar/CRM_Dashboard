@@ -10,8 +10,8 @@ class FirstReplyChartContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color(0xff161C32),
-      ),
+          color: Color(0xff161C32),
+          borderRadius: BorderRadius.all(Radius.circular(8))),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

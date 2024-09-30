@@ -9,7 +9,7 @@ class LineChartContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 233,
+      height: 240,
       decoration: BoxDecoration(
           color: const Color(0xff161C32),
           borderRadius: BorderRadius.circular(12)),
