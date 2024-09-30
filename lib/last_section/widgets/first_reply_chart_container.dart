@@ -16,9 +16,14 @@ class FirstReplyChartContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'First Reply and Full Resolve Time',
-            style: AppStyles.styleMeduim16(context),
+          Padding(
+            padding: const EdgeInsets.all(6),
+            child: Expanded(
+              child: Text(
+                'First Reply and Full Resolve Time',
+                style: AppStyles.styleMeduim16(context),
+              ),
+            ),
           ),
           const FirstReplyLineChart(),
           const SizedBox(
