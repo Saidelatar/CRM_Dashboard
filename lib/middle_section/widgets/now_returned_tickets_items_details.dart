@@ -24,31 +24,14 @@ class NowAndReturnedTicketsItemsDetails extends StatelessWidget {
         ),
         Flexible(
           child: FittedBox(
-            fit: BoxFit.scaleDown,
             child: Text(
               itemModel.title,
               style: AppStyles.styleMeduim16(context),
+              softWrap: true,
             ),
           ),
         ),
       ],
-    );
-
-    ListTile(
-      leading: Container(
-        width: 12,
-        height: 12,
-        decoration: ShapeDecoration(
-          color: itemModel.color,
-          shape: const OvalBorder(),
-        ),
-      ),
-      title: Expanded(
-        child: Text(
-          itemModel.title,
-          style: AppStyles.styleMeduim16(context),
-        ),
-      ),
     );
   }
 }

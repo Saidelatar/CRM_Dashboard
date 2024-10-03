@@ -18,7 +18,10 @@ class LastSection extends StatelessWidget {
           SizedBox(
             height: 18,
           ),
-          BarChartContainer(),
+          Expanded(child: BarChartContainer()),
+          SizedBox(
+            height: 32,
+          )
         ],
       ),
     );

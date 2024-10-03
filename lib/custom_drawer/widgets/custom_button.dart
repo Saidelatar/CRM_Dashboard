@@ -19,9 +19,13 @@ class CustomButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'DownLoad',
-              style: AppStyles.styleRegular16(context),
+            Flexible(
+              child: FittedBox(
+                child: Text(
+                  'DownLoad',
+                  style: AppStyles.styleRegular16(context),
+                ),
+              ),
             ),
             const Icon(
               Icons.download,

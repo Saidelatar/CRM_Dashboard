@@ -12,7 +12,7 @@ class DashboardDesktopLayout extends StatelessWidget {
       backgroundColor: const Color(0xff121526),
       body: Row(
         children: [
-          CustomDrawer(),
+          Expanded(child: CustomDrawer()),
           const SizedBox(
             width: 55,
           ),

@@ -16,22 +16,24 @@ class LineChartContainer extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(
-            height: 27,
+            height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 27, right: 30),
+            padding: const EdgeInsets.only(left: 10, right: 10),
             child: Row(
               children: [
-                FittedBox(
-                  child: Text(
-                    'Tickets Created vs Tickets Solved',
-                    style: AppStyles.styleSemiBold16(context).copyWith(
-                      fontSize: 20,
+                Flexible(
+                  child: FittedBox(
+                    child: Text(
+                      'Tickets Created vs Tickets Solved',
+                      style: AppStyles.styleSemiBold16(context).copyWith(
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                 ),
-                const Expanded(
-                  child: SizedBox(),
+                const SizedBox(
+                  width: 10,
                 ),
                 Flexible(
                   child: FittedBox(
@@ -227,22 +229,23 @@ class _LineChart extends StatelessWidget {
     Widget text;
     switch (value.toInt()) {
       case 1:
-        text = const Text('JAN', style: style);
+        text = const Expanded(child: const Text('JAN', style: style));
         break;
       case 2:
-        text = const Text('FEB', style: style);
+        text = const Expanded(child: Text('FEB', style: style));
         break;
       case 3:
-        text = const Text('MAR', style: style);
+        text = const Expanded(child: Text('MAR', style: style));
         break;
       case 4:
-        text = const Text('APR', style: style);
+        text = const Expanded(child: Text('APR', style: style));
         break;
       case 5:
-        text = const Text('MAY', style: style);
+        text = const Expanded(child: const Text('MAY', style: style));
         break;
       case 6:
-        text = const Text('Jun', style: style);
+        text = const Flexible(
+            child: FittedBox(child: const Text('JUN', style: style)));
         break;
       default:
         text = const Text('');

@@ -14,7 +14,7 @@ class MiddleSection extends StatelessWidget {
     return const Column(
       children: [
         SizedBox(
-          height: 55,
+          height: 60,
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,16 +65,12 @@ class MiddleSection extends StatelessWidget {
             ),
           ],
         ),
-        Flexible(
-          child: SizedBox(
-            height: 31,
-          ),
+        SizedBox(
+          height: 31,
         ),
-        Flexible(child: LineChartContainer()),
-        Flexible(
-          child: SizedBox(
-            height: 14,
-          ),
+        Expanded(child: LineChartContainer()),
+        SizedBox(
+          height: 14,
         ),
         Expanded(
           child: Row(

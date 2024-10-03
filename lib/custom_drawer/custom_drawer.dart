@@ -15,117 +15,133 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      decoration: const BoxDecoration(color: Color(0xff161B2E)),
-      width: MediaQuery.sizeOf(context).width * 0.2,
-      child: CustomScrollView(
-        slivers: [
-          const SliverToBoxAdapter(
-            child: Center(
-              child: FittedBox(
-                child: Text('CRM Dashboard',
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.white,
-                      fontFamily: 'Inter',
-                    )),
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: const BoxDecoration(color: Color(0xff161B2E)),
+        width: MediaQuery.sizeOf(context).width * 0.2,
+        child: CustomScrollView(
+          slivers: [
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10,
               ),
             ),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 10,
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: DrawerListtile(image: Assets.imagesGroup, text: 'Report'),
-          ),
-          DrawerItemsListview(
-            items: const [
-              ItemsModel(item: 'Graph'),
-              ItemsModel(item: 'Text'),
-            ],
-            listIndex: 0,
-            controller: controller,
-          ),
-          const SliverToBoxAdapter(
-            child: Divider(
-              color: Color(0xff9C5D9C),
-              thickness: 0.6,
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: DrawerListtile(image: Assets.imagesMusic, text: 'Channels'),
-          ),
-          DrawerItemsListview(
-            items: const [
-              ItemsModel(item: 'Email'),
-              ItemsModel(item: 'Phone Call'),
-              ItemsModel(item: 'Online Chat'),
-              ItemsModel(item: 'Website'),
-            ],
-            listIndex: 1,
-            controller: controller,
-          ),
-          const SliverToBoxAdapter(
-            child: Divider(
-              color: Color(0xff9C5D9C),
-              thickness: 0.6,
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: DrawerListtile(
-                image: Assets.imagesMdiTicketOutline, text: 'Ticket Status'),
-          ),
-          DrawerItemsListview(
-            items: const [
-              ItemsModel(item: 'Created'),
-              ItemsModel(item: 'Open'),
-              ItemsModel(item: 'Responded'),
-              ItemsModel(item: 'Other'),
-              ItemsModel(item: 'Deleted'),
-            ],
-            listIndex: 2,
-            controller: controller,
-          ),
-          const SliverToBoxAdapter(
-            child: Divider(
-              color: Color(0xff9C5D9C),
-              thickness: 0.6,
-            ),
-          ),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                FittedBox(
-                  child: Text(
-                    'Full Tickets Report',
-                    style: AppStyles.styleBold24(context).copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
+            const SliverToBoxAdapter(
+              child: Center(
+                child: FittedBox(
+                  child: Text('CRM Dashboard',
+                      style: TextStyle(
+                        fontSize: 22,
+                        color: Colors.white,
+                        fontFamily: 'Inter',
+                      )),
                 ),
-                const SizedBox(
-                  height: 15,
-                ),
-                FittedBox(
-                  child: Text(
-                    'DownLoad Report',
-                    style: AppStyles.styleRegular16(context)
-                        .copyWith(color: const Color(0xff878787)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Expanded(child: CustomButton())
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 10,
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: DrawerListtile(image: Assets.imagesGroup, text: 'Report'),
+            ),
+            DrawerItemsListview(
+              items: const [
+                ItemsModel(item: 'Graph'),
+                ItemsModel(item: 'Text'),
               ],
+              listIndex: 0,
+              controller: controller,
             ),
-          ),
-        ],
+            const SliverToBoxAdapter(
+              child: Divider(
+                color: Color(0xff9C5D9C),
+                thickness: 0.6,
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child:
+                  DrawerListtile(image: Assets.imagesMusic, text: 'Channels'),
+            ),
+            DrawerItemsListview(
+              items: const [
+                ItemsModel(item: 'Email'),
+                ItemsModel(item: 'Phone Call'),
+                ItemsModel(item: 'Online Chat'),
+                ItemsModel(item: 'Website'),
+              ],
+              listIndex: 1,
+              controller: controller,
+            ),
+            const SliverToBoxAdapter(
+              child: Divider(
+                color: Color(0xff9C5D9C),
+                thickness: 0.6,
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: DrawerListtile(
+                  image: Assets.imagesMdiTicketOutline, text: 'Ticket Status'),
+            ),
+            DrawerItemsListview(
+              items: const [
+                ItemsModel(item: 'Created'),
+                ItemsModel(item: 'Open'),
+                ItemsModel(item: 'Responded'),
+                ItemsModel(item: 'Other'),
+                ItemsModel(item: 'Deleted'),
+              ],
+              listIndex: 2,
+              controller: controller,
+            ),
+            const SliverToBoxAdapter(
+              child: Divider(
+                color: Color(0xff9C5D9C),
+                thickness: 0.6,
+              ),
+            ),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Flexible(
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Full Tickets Report',
+                          style: AppStyles.styleBold24(context).copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Flexible(
+                      child: FittedBox(
+                        child: Text(
+                          'DownLoad Report',
+                          style: AppStyles.styleRegular16(context)
+                              .copyWith(color: const Color(0xff878787)),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const CustomButton()
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
